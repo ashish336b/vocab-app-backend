@@ -2,13 +2,13 @@
   "name": "dictionary-backend",
   "version": "1.0.0",
   "description": "This is dictionary backend.",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "ashish336b",
   "license": "MIT",
   "scripts": {
     "lint": "eslint src/**/*.ts",
     "format": "prettier --write src/**/*.ts .",
-    "dev": "ts-node-dev src/server.ts"
+    "dev": "ts-node-dev src/index.ts | pino-pretty"
   },
   "dependencies": {
     "@sinclair/typebox": "^0.29.4",

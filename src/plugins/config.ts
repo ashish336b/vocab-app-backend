@@ -13,9 +13,7 @@ export enum NodeEnv {
 const ConfigSchema = Type.Strict(
   Type.Object({
     NODE_ENV: Type.Enum(NodeEnv),
-    LOG_LEVEL: Type.String(),
-    API_HOST: Type.String(),
-    API_PORT: Type.String(),
+    PORT: Type.String(),
   }),
 );
 
