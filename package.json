@@ -9,12 +9,13 @@
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
     "format": "prettier --write src/**/*.ts .",
-    "dev": "nodemon | pino-pretty"
+    "dev": "nodemon"
   },
   "dependencies": {
     "@prisma/client": "4.16.2",
     "@sinclair/typebox": "^0.29.4",
     "dotenv": "^16.3.1",
+    "dotenv-expand": "^10.0.0",
     "fastify": "^4.19.2",
     "fastify-plugin": "^4.5.0",
     "pino": "^8.14.1",
