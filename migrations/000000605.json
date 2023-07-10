@@ -1,0 +1,53 @@
+{
+	"word": "verbose",
+	"meaning": [
+		"Using or containing too many words; wordy; long-winded; prolix.",
+		"(computing) Producing unusually detailed output for diagnostic purposes."
+	],
+	"sentences": [
+		"The schools were extensive buildings attached to the temples, where from an early age boys and girls were taught by the priests to sweep the sanctuaries and keep up the sacred fires, to fast at proper seasons and draw blood for penance, and where they received moral teaching in long and verbose formulas.",
+		"Her redundant language is making her sound verbose.",
+		"Being verbose and exaggerating a person's qualities will not help.",
+		"Don't go off on a tangent or get too verbose.",
+		"It is discursive in its style and verbose; but, considering the period at which it appeared, it is remarkable for the strong common sense displayed by the author, his comparative freedom from prejudice, and his firm application of the methods of scientific reasoning to the interpretation of phenomena.",
+		"The maximum length of a verbose description is 128 characters.",
+		"Our legislators have become verbose over the last century.",
+		"The style is heavy and involved, loaded with metaphor and bizarre expressions, and verbose to excess.",
+		"However, RSF is not yet at full release status and the verbose logs can sometimes be helpful.",
+		"For instance, the verbose variable is a toggle which causes command input to be echoed.",
+		"Why should he be so ardent in desiring grave and verbose writers?",
+		"The logical conclusion which should be drawn from my rather verbose statement I leave to my readers to draw.",
+		"If you enable verbose logging on the Document Refinery Options Configuration screen, the Document Refinery log shows the related configuration information.",
+		"The Avalon example would look about as verbose if done in the same way.",
+		"Asinius Pollio sneered at his Patavinity, and the emperor Caligula denounced him as verbose, but with these exceptions the opinion of antiquity was unanimous in pronouncing him a consummate literary workman.",
+		"The -v switch at the beginning of the command turns on verbose mode, letting you see just what the program is doing.",
+		"The listing file contains verbose output about all the calculations that take place.",
+		"Flags -verbose Causes verbose messages to be written to standard output logging hub operations.",
+		"Do you pack your press releases or publicity with verbose journalese, business buzzwords, and jargon?",
+		"This is useful for people who want to use nutmeg as a login shell. verbose Be verbose.",
+		"Thus a positive argument has the effect of making the program more verbose.",
+		"Do not be put off by some slightly clunky, overly verbose dialog.",
+		"Wherever possible the code has been kept as straight forward as possible and slightly verbose."
+	],
+	"synonyms": [
+		"windy",
+		"tedious",
+		"wordy",
+		"long-winded",
+		"talkative",
+		"gabby",
+		"tautologous",
+		"repetitive",
+		"loquacious",
+		"grandiloquent",
+		"flowery",
+		"redundant",
+		"prolix",
+		"pleonastic",
+		"periphrastic"
+	],
+	"antonyms": [
+		"succinct",
+		"concise"
+	]
+}

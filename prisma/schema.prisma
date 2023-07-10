@@ -29,13 +29,15 @@ model Word {
   updatedAt       DateTime         @default(now()) @map("updated_at")
   // inverse relations
   VocabularyEntry VocabularyEntry?
+
+  @@map("words")
 }
 
 model VocabularyEntry {
   id Int @id @default(autoincrement())
 
   // foreign key
-  wordId Int  @unique
+  wordId Int  @unique @map("word_id")
   word   Word @relation(fields: [wordId], references: [id], onDelete: Cascade)
 
   meaning   Json

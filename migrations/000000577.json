@@ -1,0 +1,63 @@
+{
+	"word": "tractable",
+	"meaning": [
+		"Easily managed, taught, or controlled; docile; compliant.",
+		"Easily worked; malleable.",
+		"(mathematics) Sufficiently operationalizable or useful to allow a mathematical calculation to proceed toward a solution.",
+		"(computer science) Of a decision problem, algorithmically solvable fast enough to be practically relevant, typically in polynomial time."
+	],
+	"sentences": [
+		"These men seldom use vitrifiable enamels, pigments being much more tractable and less costly.",
+		"In order to make such models tractable, we require that they have finite domains.",
+		"However, the computation time to perform a complete search is not tractable.",
+		"It is described as having been thoroughly healthy at the date of its arrival, and of an amiable and tractable disposition.",
+		"Turin, the capital of Piedmont, was taken by Henri de Lorraine, comte dHarcourt; the alliance with rebellious portugal facilitated the occupation of Roussillon and almost the whole of Catalonia, and Spain was reduced to defending herself; while the embarrassments of the Habsburgs at Madrid made those of Vienna more tractable.",
+		"In order to keep the evaluation process tractable, an \" evaluated configuration \" is defined that scopes the evaluation effort.",
+		"It may be necessary to use mixture models to capture aspects of the within-group infection process in a computationally tractable manner [3] .",
+		"Traditional models generally assume very simple functional forms for f i, in order to have analytically tractable expressions for g t.",
+		"It is straightforward to show students that the only mathematically tractable way forward is to minimize the squared error or the mean squared error.",
+		"The organism can be cultured under defined conditions The organism is genetically tractable -- e.g., transformable, prone to introduction of designed mutations.",
+		"Even at an elementary level one can often use complex numbers to solve problems which are otherwise not very tractable.",
+		"With the advent of faster computers, models become tractable which previously were not.",
+		"Whilst this may seem easy in theory, the practicalities are likely to prove less tractable.",
+		"C. Brooke of Welling, Kent, succeeded in making a wolf fairly tractable, the experience of others has been the reverse of encouraging.",
+		"Almost all known tractable subproblems are either structural or relational.",
+		"Pre-requisite Energy 1 Learning outcomes 1 Development of techniques to generate tractable models of real systems.",
+		"In the second part we consider a new relational reduction to tractable constraint languages.",
+		"In this paper we identify a restricted set of constraints which gives rise to a class of tractable problems.",
+		"Therefore animal approaches, especially with tractable systems, will continue to be essential in the foreseeable future.",
+		"It may be necessary to use mixture models to capture aspects of the within-group infection process in a computationally tractable manner [3 ].",
+		"In the project I use computational metalanguage to denote and so render these names computationally tractable.",
+		"The Prussian diet of 1862 was no whit more tractable than its predecessor, but fell to attacking the prof essional army and advocating the extension of the militia (Landwchr) system; on the 11th of March the king dissolved it in disgust, whereupon the Liberal ministry resigned, and was succeeded by the Conservative cabinet of Prince Hohenlohe.",
+		"Tractable lifted problems can explain known tractability results as well as generate new tractable subclasses.",
+		"Conditions were not then favourable for peace, however; the French government, moreover, did not approve of the choice, inasmuch as Adams was not sufficiently pliant and tractable and was from the first suspicious of Vergennes; and subsequently Benjamin Franklin, Thomas Jefferson, John Jay and Henry Laurens were appointed to co-operate with Adams. Jefferson, however, did not cross the Atlantic, and Laurens took little part in the negotiations.",
+		"In violation of this pledge, and in the hope that a new bank would be more tractable than the Bank of Mississippi, the Planters' Bank was established at Natchez, in 1830, with a capital of $3,000,000, two-thirds of which was subscribed by the state.",
+		"The Tupinoquins, the most tractable of the Brazilian tribes, made peace with the settlers, and the colony was founded without a struggle.",
+		"Some tractable members of the Five Hundred were afterwards swept up and served to give these measures the confirmation of their House."
+	],
+	"synonyms": [
+		"amenable",
+		"manipulable",
+		"pliable",
+		"gentle",
+		"flexible",
+		"controllable",
+		"docile",
+		"compliant",
+		"complaisant",
+		"obedient",
+		"manageable",
+		"malleable",
+		"governable",
+		"workable",
+		"tame"
+	],
+	"antonyms": [
+		"intractable",
+		"unruly",
+		"obstinate",
+		"stubborn",
+		"uncontrollable",
+		"unmanageable"
+	]
+}
