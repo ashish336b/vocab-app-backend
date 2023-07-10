@@ -11,10 +11,12 @@
     "dev": "ts-node-dev src/index.ts | pino-pretty"
   },
   "dependencies": {
+    "@prisma/client": "4.16.2",
     "@sinclair/typebox": "^0.29.4",
     "dotenv": "^16.3.1",
     "fastify": "^4.19.2",
-    "fastify-plugin": "^4.5.0"
+    "fastify-plugin": "^4.5.0",
+    "prisma": "^4.16.2"
   },
   "devDependencies": {
     "@types/node": "^20.4.1",

@@ -1,5 +1,6 @@
 import fastify from 'fastify';
 import config from './plugins/config';
+import routes from './routes/v1';
 
 (async () => {
   const server = fastify({
@@ -12,21 +13,14 @@ import config from './plugins/config';
     process.exit(1);
   });
 
+  // load config
   await server.register(config);
 
-  server.get('/ping', async (request, reply) => {
-    return 'pong\n';
-  });
+  // routes
+  await server.register(routes, { prefix: '/api/v1' });
 
-  const port = +server.config.PORT;
-
-  server.listen({ port: port as number }, (err, address) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-    console.log(`Server listening at ${address}`);
-    console.log(`Server ping pong at ${address}/ping`);
+  server.get('/health-check', async (request, reply) => {
+    return { message: 'healthy' };
   });
 
   for (const signal of ['SIGINT', 'SIGTERM']) {
@@ -37,4 +31,13 @@ import config from './plugins/config';
       }),
     );
   }
+
+  server.listen({ port: Number(server.config.PORT) }, (err, address) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
+    console.log(`Server ping pong at ${address}/ping`);
+  });
 })();

@@ -1,9 +1,8 @@
 import { FastifyPluginAsync } from 'fastify';
+import { words } from './words';
 
 const routes: FastifyPluginAsync = async (fastify) => {
-  fastify.get('/hello', async (request, response) => {
-    return { ok: 'ok' };
-  });
+  fastify.register(words, { prefix: 'words' });
 };
 
 export default routes;
