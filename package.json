@@ -9,7 +9,7 @@
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
     "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
     "format": "prettier --write src/**/*.ts .",
-    "dev": "nodemon"
+    "dev": "nodemon | pino-pretty"
   },
   "dependencies": {
     "@prisma/client": "4.16.2",

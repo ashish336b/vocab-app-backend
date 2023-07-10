@@ -40,6 +40,6 @@ import routes from './routes/v1';
       process.exit(1);
     }
     console.log(`Server listening at ${address}`);
-    console.log(`Server ping pong at ${address}/ping`);
+    console.log(`Server ping pong at ${address}/health-check`);
   });
 })();
