@@ -8,11 +8,6 @@ import routes from './routes/v1';
     disableRequestLogging: true,
   });
 
-  process.on('unhandledRejection', (err) => {
-    console.error(err);
-    process.exit(1);
-  });
-
   // load config
   await server.register(config);
 
@@ -23,6 +18,7 @@ import routes from './routes/v1';
     return { message: 'healthy' };
   });
 
+  // termination based on events.
   for (const signal of ['SIGINT', 'SIGTERM']) {
     process.on(signal, () =>
       server.close().then((err) => {
@@ -31,6 +27,12 @@ import routes from './routes/v1';
       }),
     );
   }
+
+  // handle unhandledRejection on nodejs process.
+  process.on('unhandledRejection', (err) => {
+    console.error(err);
+    process.exit(1);
+  });
 
   server.listen({ port: Number(server.config.PORT) }, (err, address) => {
     if (err) {
