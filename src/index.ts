@@ -1,10 +1,11 @@
-import fastify from 'fastify';
+import fastify, { FastifyReply, FastifyRequest } from 'fastify';
 import config from './plugins/config';
 import routes from './routes/v1';
+import { logger } from './plugins/logger';
 
 (async () => {
   const server = fastify({
-    logger: true,
+    logger: logger,
     disableRequestLogging: true,
   });
 
@@ -14,7 +15,7 @@ import routes from './routes/v1';
   // routes
   await server.register(routes, { prefix: '/api/v1' });
 
-  server.get('/health-check', async (request, reply) => {
+  server.get('/health-check', async (request: FastifyRequest, reply: FastifyReply) => {
     return { message: 'healthy' };
   });
 
