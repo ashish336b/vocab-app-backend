@@ -2,13 +2,14 @@
   "name": "dictionary-backend",
   "version": "1.0.0",
   "description": "This is dictionary backend.",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "author": "ashish336b",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"*/**/*.{js,ts,tsx}\" --quiet --fix",
+    "preinstall": "node -e \"if(process.env.npm_execpath.indexOf('yarn') === -1) throw new Error('You must use Yarn to install, not NPM')\"",
     "format": "prettier --write src/**/*.ts .",
-    "dev": "ts-node-dev src/index.ts | pino-pretty"
+    "dev": "nodemon"
   },
   "dependencies": {
     "@prisma/client": "4.16.2",
@@ -31,13 +32,15 @@
     "eslint-plugin-promise": "^6.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
+    "nodemon": "^3.0.1",
     "pino-pretty": "^10.0.1",
     "prettier": "^3.0.0",
+    "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "*",
     "yarn": "^1.22.19"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "yarn lint"
+    "**/*.{ts,js}": "yarn lint"
   }
 }
