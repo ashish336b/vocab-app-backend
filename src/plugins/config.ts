@@ -17,8 +17,17 @@ export enum NodeEnv {
 
 const ConfigSchema = Type.Strict(
   Type.Object({
+    APP_NAME: Type.String(),
     NODE_ENV: Type.Enum(NodeEnv),
+    APP_URL: Type.String(),
     PORT: Type.String(),
+    DATABASE_URL: Type.String(),
+    JWT_SECRET: Type.String(),
+    SESSION_SECRET: Type.String(),
+    GOOGLE_CLIENT_ID: Type.String(),
+    GOOGLE_CLIENT_SECRET: Type.String(),
+    FRONTEND_REDIRECT_URL: Type.String(),
+    CALLBACK_URL: Type.String(),
   }),
 );
 
@@ -41,11 +50,5 @@ const configPlugin: FastifyPluginAsync = async (server) => {
 
   server.decorate<NodeJS.ProcessEnv>('config', process.env);
 };
-
-declare module 'fastify' {
-  interface FastifyInstance {
-    config: Config;
-  }
-}
 
 export default fp(configPlugin);
