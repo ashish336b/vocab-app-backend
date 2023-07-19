@@ -9,6 +9,7 @@ import session from '@fastify/session';
 import { auth } from './routes/v1/auth';
 import { oAuthCallback } from './routes/v1/auth/callback';
 import jwt from '@fastify/jwt';
+import cors from '@fastify/cors';
 
 (async () => {
   const server = fastify({
@@ -18,6 +19,20 @@ import jwt from '@fastify/jwt';
 
   // load config
   await server.register(config);
+  await server.register(cors, {
+    delegator: (request, callback) => {
+      // list of allowed origin
+      const allowedOrigin: string[] = [];
+      // TODO: allow credentials for specific endpoint only
+      const origin =
+        request.headers.origin && allowedOrigin.includes(request.headers.origin)
+          ? request.headers.origin
+          : server.config.FRONTEND_BASE_URL;
+
+      callback(null, { origin, credentials: true });
+    },
+  });
+
   await server.register(cookie);
   await server.register(session, {
     secret: server.config.SESSION_SECRET,

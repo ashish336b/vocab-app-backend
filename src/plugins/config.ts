@@ -26,8 +26,9 @@ const ConfigSchema = Type.Strict(
     SESSION_SECRET: Type.String(),
     GOOGLE_CLIENT_ID: Type.String(),
     GOOGLE_CLIENT_SECRET: Type.String(),
-    FRONTEND_REDIRECT_URL: Type.String(),
     CALLBACK_URL: Type.String(),
+    FRONTEND_REDIRECT_URL: Type.String(),
+    FRONTEND_BASE_URL: Type.String(),
   }),
 );
 
