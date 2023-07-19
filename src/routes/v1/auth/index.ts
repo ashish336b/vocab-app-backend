@@ -1,5 +1,6 @@
 import { FastifyInstance, FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
 import { OAuth, OAuthIssuer } from '../../../core/oauth/oauth';
+import { prisma } from '../../../core/db/db';
 
 export const auth: FastifyPluginAsync = async (fastify: FastifyInstance) => {
   fastify.get('/google', async (request: FastifyRequest, reply: FastifyReply) => {
@@ -31,5 +32,24 @@ export const auth: FastifyPluginAsync = async (fastify: FastifyInstance) => {
     }
 
     return { message: 'not authenticated' };
+  });
+
+  fastify.get('/profile', {
+    preValidation: async (request, reply, next) => {
+      try {
+        await request.jwtVerify();
+      } catch (error) {
+        reply.send(error);
+      }
+    },
+    handler: async function (request, reply) {
+      const id = (request.user as any).id as number;
+      const user = await prisma.user.findFirst({ where: { id } });
+
+      return {
+        id: user?.id,
+        email: user?.email,
+      };
+    },
   });
 };
