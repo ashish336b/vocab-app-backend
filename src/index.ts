@@ -1,13 +1,13 @@
 /// <reference types="./fastify" />
 
-import fastify, { FastifyReply, FastifyRequest } from 'fastify';
+import fastify from 'fastify';
 import config from './plugins/config';
 import routes from './routes/v1';
 import { logger } from './plugins/logger';
 import cookie from '@fastify/cookie';
 import session from '@fastify/session';
 import { auth } from './routes/v1/auth';
-import { oAuthCallback } from './routes/v1/auth/callback';
+import { oauth } from './routes/oauth';
 import jwt from '@fastify/jwt';
 import cors from '@fastify/cors';
 
@@ -46,10 +46,10 @@ import cors from '@fastify/cors';
 
   // routes
   await server.register(auth, { prefix: '/login' });
-  await server.register(oAuthCallback);
+  await server.register(oauth, { prefix: '/oauth' });
   await server.register(routes, { prefix: '/api/v1' });
 
-  server.get('/health-check', async (request: FastifyRequest, reply: FastifyReply) => {
+  server.get('/health-check', async () => {
     return { message: 'healthy' };
   });
 

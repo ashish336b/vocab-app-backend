@@ -1,29 +1,9 @@
 import { FastifyInstance, FastifyPluginAsync, FastifyReply, FastifyRequest } from 'fastify';
-import { OAuth, OAuthIssuer } from '../../../core/oauth/oauth';
 import { prisma } from '../../../core/db/db';
+import httpStatus from 'http-status-codes';
 
 export const auth: FastifyPluginAsync = async (fastify: FastifyInstance) => {
-  fastify.get('/google', async (request: FastifyRequest, reply: FastifyReply) => {
-    const oauth = new OAuth(OAuthIssuer.GOOGLE, {
-      callbackUrl: request.server.config.CALLBACK_URL,
-      clientId: fastify.config.GOOGLE_CLIENT_ID,
-      clientSecret: fastify.config.GOOGLE_CLIENT_SECRET,
-    });
-
-    const codeVerifier = OAuth.generateCodeverifier();
-    request.session.set('code_verifier', codeVerifier);
-    const codeChallenge = OAuth.generateCodeChallenge(codeVerifier);
-
-    const loginUrl = await oauth.getAuthorizationUrl({
-      challengeMethod: 'S256',
-      codeChallenge: codeChallenge,
-      scope: ['email', 'profile'],
-    });
-
-    return reply.redirect(loginUrl);
-  });
-
-  fastify.get('/get-token', async (request, reply) => {
+  fastify.get('/get-token', async (request: FastifyRequest, reply: FastifyReply) => {
     if (request.session.authUser) {
       const jwtPayload = request.session.authUser.id;
       const token = request.server.jwt.sign({ id: jwtPayload });
@@ -31,11 +11,11 @@ export const auth: FastifyPluginAsync = async (fastify: FastifyInstance) => {
       return { token };
     }
 
-    return { message: 'not authenticated' };
+    return reply.code(httpStatus.UNAUTHORIZED).send({ message: 'unauthorized' });
   });
 
   fastify.get('/profile', {
-    preValidation: async (request, reply, next) => {
+    preValidation: async (request, reply) => {
       try {
         await request.jwtVerify();
       } catch (error) {
